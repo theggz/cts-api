@@ -41,12 +41,12 @@ _LOGGER = logging.getLogger(__name__)
 class CtsApi:
     """CTS API class."""
 
-    def __init__(self, token: str, session: ClientSession | None) -> None:
+    def __init__(self, token: str, session: Optional[ClientSession]) -> None:
         """Initialize the object."""
-        self.session: ClientSession | None = session
+        self.session: Optional[ClientSession] = session
         self.token = token
 
-    async def api_request(self, method: str, url: str, data: Any | None = None):
+    async def api_request(self, method: str, url: str, data: Optional[Any] = None):
         """Make an API request."""
         if self.session is None:
             session = ClientSession()
