@@ -55,16 +55,27 @@ class CtsApi:
 
         basic_auth = aiohttp.BasicAuth(self.token, "")
         error_response = ErrorResponse(None)
+        response_json = None
+
+        params = {}
+        if data:
+            for k, v in data.items():
+                if v is not None:
+                    if isinstance(v, bool):
+                        params[k] = str(v).lower()
+                    else:
+                        params[k] = v
+        else:
+            params = None
 
         try:
             async with session.request(
                 method,
                 url,
                 auth=basic_auth,
-                json=data,
+                params=params,
                 raise_for_status=False,
                 timeout=HTTP_CALL_TIMEOUT,
-                ssl=ssl.SSLContext(),
             ) as response:
                 if response.ok:
                     response_json = await response.json()
