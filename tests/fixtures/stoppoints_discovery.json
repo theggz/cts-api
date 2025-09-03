@@ -1,6 +1,6 @@
 {
   "StopPointsDelivery": {
-    "ResponseTimestamp": "2023-01-01T12:00:00Z",
+    "ResponseTimestamp": "2023-01-01T12:00:00+00:00",
     "RequestMessageRef": "test-request",
     "AnnotatedStopPointRef": [
       {
