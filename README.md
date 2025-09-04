@@ -4,9 +4,14 @@ An asynchronous Python client for the [CTS (Compagnie des Transports Strasbourge
 
 ## Installation
 
-You can install this library from the repository:
+You can install this library from one of the repositories:
+* GitHub :
 ```bash
 pip install git+https://github.com/theggz/cts-api.git
+```
+* PyPi :
+```bash
+pip install cts-api
 ```
 
 ## Usage
