@@ -71,6 +71,6 @@ jobs:
         run: pip install flit
 
       - name: Publish to PyPI
-        run: flit publish
-        env:
-          FLIT_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        uses: AsifArmanRahman/to-pypi-using-flit@v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
